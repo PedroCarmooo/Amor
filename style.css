@@ -164,3 +164,28 @@ audio {
   pointer-events: none;
   z-index: 1;
 }
+/* Responsividade para imagens no slider */
+.foto-casal img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* Responsividade geral para o container */
+.foto-casal {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+/* Ajustar setas no mobile */
+@media (max-width: 768px) {
+  .seta {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+}
