@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Te Amo ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="interface">
+  <!-- Canvas para fogos -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- Corações -->
+  <div class="hearts-container"></div>
+
+  <div class="container">
+    <audio controls autoplay loop>
+      <source src="musica/Musica.crdownload" type="audio/mpeg" />
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Slider manual com setas -->
+    <div class="foto-casal">
+      <button class="seta esquerda" onclick="trocarImagem(-1)">❮</button>
+      <img id="imagemCasal" src="imagem/Amor1.jpg" alt="Foto do casal" />
+      <button class="seta direita" onclick="trocarImagem(1)">❯</button>
+    </div>
+
+    <h2>Feliz dia dos Namorados! ❤️</h2>
+
+    <p class="mensagem">
+      Yasmin Martins de Assis, a cada dia que passa, meu coração se enche mais de carinho e admiração por você.
+      Cada sorriso seu ilumina o meu mundo, e cada abraço me faz sentir que estou completamente apaixonado.
+      Você é a razão dos meus melhores pensamentos, e tudo ao seu lado se torna mais bonito e significativo.
+      Se eu não tivesse postado aquele status... nada disso seria real, mas aqui estamos e é apenas o primeiro de muitos, amor!
+      <br><br>Obrigado por tudo, minha princesa!
+      <br>Eu te amo muito!
+      <br><br><strong>Ass: Pedro Carmo (seu noivo) ❤️</strong>
+    </p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="efeitos.js"></script>
+  <script>
+    const imagens = [
+      "imagem/Amor1.jpg",
+      "imagem/Amor2.jpg",
+      "imagem/Amor3.jpg",
+      "imagem/Amor4.jpg",
+      "imagem/Amor5.jpg",
+      "imagem/Amor6.jpg",
+    ];
+    
+    let indiceAtual = 0;
+    const imgElemento = document.getElementById("imagemCasal");
+    
+    function trocarImagem(direcao) {
+      indiceAtual = (indiceAtual + direcao + imagens.length) % imagens.length;
+      imgElemento.src = imagens[indiceAtual];
+    }
+  </script>
+</body>
+</html>
