@@ -60,7 +60,27 @@ audio {
   margin: 1rem auto;
 }
 
-/* Slider manual */
+/* Garante que o container da foto permita espaço extra para setas */
+.foto-casal {
+  position: relative;
+  width: 300px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tamanho padrão das imagens */
+.foto-casal img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  z-index: 1;
+}
+
+/* Estilo base das setas */
 .seta {
   position: absolute;
   top: 50%;
@@ -76,12 +96,10 @@ audio {
   z-index: 4;
 }
 
-/* Hover mais visível */
 .seta:hover {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Reposiciona as setas logo ao lado da imagem */
 .seta.esquerda {
   left: -40px;
 }
@@ -89,26 +107,6 @@ audio {
 .seta.direita {
   right: -40px;
 }
-
-/* Garante que o container da foto permita esse espaço extra */
-.foto-casal {
-  position: relative;
-  width: calc(100% + 80px); /* 40px para cada lado */
-  max-width: 380px;
-  margin: 2rem auto;
-  overflow: visible; /* importante para ver as setas */
-}
-
-.foto-casal img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-  display: block;
-}
-
-
 
 .tempo {
   font-size: 1.2rem;
@@ -164,28 +162,28 @@ audio {
   pointer-events: none;
   z-index: 1;
 }
-/* Responsividade para imagens no slider */
-.foto-casal img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  z-index: 1;
-}
 
-/* Responsividade geral para o container */
-.foto-casal {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 1rem auto;
-}
+/* Responsividade para celular */
+@media (max-width: 400px) {
+  .foto-casal {
+    width: 260px;
+  }
 
-/* Ajustar setas no mobile */
-@media (max-width: 768px) {
+  .foto-casal img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .seta.esquerda {
+    left: -30px;
+  }
+
+  .seta.direita {
+    right: -30px;
+  }
+
   .seta {
     font-size: 1.5rem;
-    padding: 0.5rem;
+    padding: 0.3rem 0.6rem;
   }
 }
